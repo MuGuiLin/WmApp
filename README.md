@@ -2,7 +2,7 @@
 
 > 学习用Vue.Js 做一个App Demo示例,并入门提升个人技能。
 
-![image](https://github.com/MuGuiLin/WmApp/blob/master/src/assets/2017-08-23_001417.jpg?raw=true)
+![image](https://github.com/MuGuiLin/WmApp/blob/master/src/assets/2017-08-23_001417.jpg?raw=true)![image](https://github.com/MuGuiLin/WmApp/blob/master/src/assets/2017-08-23_003103.jpg?raw=true)![image](https://github.com/MuGuiLin/WmApp/blob/master/src/assets/2017-08-23_002959.jpg?raw=true)
 
 ## Build Setup
 
