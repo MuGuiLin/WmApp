@@ -1,6 +1,6 @@
 # appdemo
 
-> App Demo效果图。
+> 框架版本：Vue2.0，App Demo效果图。
 
 ![image](https://github.com/MuGuiLin/WmApp/blob/master/src/assets/2017-08-23_001417.jpg?raw=true)![image](https://github.com/MuGuiLin/WmApp/blob/master/src/assets/2017-08-23_003103.jpg?raw=true)![image](https://github.com/MuGuiLin/WmApp/blob/master/src/assets/2017-08-23_002959.jpg?raw=true)
 
