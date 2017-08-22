@@ -1,0 +1,20 @@
+thml, body
+	font-family:"微软雅黑";
+	font-weigth: 200;
+.clear
+	display: inline-block;
+	&:after
+		content: "."; display: block; height: 0px; line-height: 0px; clear: both; visibility: hidden;
+
+@media (-webkit-min-device-pixel-ratio: 1.5),(min-device-pixel-ratio: 1.5)
+	.barder-1px
+		&::after
+			-webkit-transform: scaleY(0.7);
+			transform: scaleY(0.7);
+			
+@media (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2)
+	.barder-1px
+		&::after
+			-webkit-transform: scaleY(0.5);
+			transform: scaleY(0.5);
+	
