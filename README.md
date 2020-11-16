@@ -99,7 +99,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 # Demo效果图：
 
-![image](https://github.com/MuGuiLin/WmApp/blob/master/src/assets/2017-08-23_001417.jpg?raw=true)![image](https://github.com/MuGuiLin/WmApp/blob/master/src/assets/2017-08-23_003103.jpg?raw=true)![image](https://github.com/MuGuiLin/WmApp/blob/master/src/assets/2017-08-23_002959.jpg?raw=true)
+![image](https://raw.githubusercontent.com/MuGuiLin/WmApp/master/App-v1.0/src/assets/2017-08-23_001417.jpg?raw=true)![image](https://raw.githubusercontent.com/MuGuiLin/WmApp/master/App-v1.0/src/assets/2017-08-23_003103.jpg?raw=true)![image](https://raw.githubusercontent.com/MuGuiLin/WmApp/master/App-v1.0/src/assets/2017-08-23_002959.jpg?raw=true)
 
 
 
