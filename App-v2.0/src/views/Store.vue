@@ -1,6 +1,6 @@
 <template>
   <div class="store">
-    <v-header :seller="seller"></v-header>
+    <v-header :header="header" :seller="seller"></v-header>
     <v-nav />
     <router-view :seller="seller"></router-view>
   </div>
@@ -19,6 +19,7 @@ export default {
   data() {
     return {
       seller: {},
+      header: {},
       params: {
         page: 1,
         number: 20,
@@ -35,6 +36,14 @@ export default {
         method: "GET",
         data: this.params,
       });
+
+      const header = await this.$.http({
+        url: "/shop",
+        method: "GET",
+        data: { id: this.$route.query.id },
+      });
+      this.header = header.filter((o) => o.mtWmPoiId == this.$route.query.id)[0];
+      console.log(this.header);
     },
   },
 };

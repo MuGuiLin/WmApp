@@ -5,6 +5,7 @@ const Koa = new koa();
 const Router = new router();
 
 const appData = require('./data/data.json');
+const appShop = require('./data/shop.json');
 const config = {
     prot: 3000,
     host: '127.0.0.1'
@@ -24,6 +25,10 @@ const config = {
     });
 
     Router
+        .get('/shop', async (ctx, next) => {
+            ctx.status = 200;
+            ctx.body = appShop.shop;
+        })
         .get('/goods', async (ctx, next) => {
             ctx.status = 200;
             ctx.body = appData.goods;

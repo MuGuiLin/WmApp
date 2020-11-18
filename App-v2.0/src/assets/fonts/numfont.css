@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "mtsi-font";
+  src: url("numfont.eot?n=20201118"); /* IE9 */
+  src: url("numfont.eot?#iefix") format("embedded-opentype"), url("numfont.woff");/* IE6-IE8 */
+}
+
+.mtsi-num {
+  font-family: mtsi-font;
+}

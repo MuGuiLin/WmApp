@@ -6,12 +6,12 @@
 		
 		<section class="content-box">
 			<div class="photo">
-				<img v-bind:src="seller.avatar" width="64px" height="64px" />
+				<img v-bind:src="header.picUrl || seller.avatar" width="64px" height="64px" />
 			</div>
 			<div class="content">
 				<div class="title">
 					<span class="brand"></span>
-					<span class="name">{{seller.name}}</span>
+					<span class="name">{{header.shopName || seller.name}}</span>
 				</div>
 				<p class="time">{{seller.description}}/{{seller.deliveryTime}}分钟内送达！</p>
 				<div v-if="seller.supports" class="supports">
@@ -35,14 +35,18 @@
 			<section v-show="detailShow" class="pop-detail" ref="popDetail">
 				<div class="detail-box clear">
 					<div class="detail-main">
-						<h1>{{seller.name}}</h1>
+						<h1>{{header.shopName || seller.name}}</h1>
 						<div class="star-box">
-							<star :size="48" :score="seller.score"></star>
+							<star :size="48" :score="Math.round(header.wmPoiScore / 10)  || seller.score"></star>
 						</div>
 						
 						<Flex detail-text="优惠信息"></Flex>
 						
-						<ul class="supports">
+						<ul class="supports" v-if="0 < header.discounts2.length">
+							<li v-for="(o, i) in header.discounts2" :key="i"><img :src="o.iconUrl" alt="">{{o.info}}</li>
+						</ul>
+						
+						<ul class="supports" v-else>
 							<li v-for="(o, i) in seller.supports" :key="i"><i :class="classMap[seller.supports[i].type]"></i>{{o.description}}</li>
 						</ul>
 						
@@ -66,6 +70,10 @@
 	
 	export default {
 		props: {
+			header: {
+				type: Object,  //接收App.vue传过来的数据对象
+				default: {}
+			},
 			seller: {
 				type: Object  //接收App.vue传过来的数据对象
 			}
@@ -108,22 +116,25 @@
 		.background-box
 			position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; text-align: center; overflow: hidden; filter: blur(4px);
 		.content-box
-			position: relative; padding: 16px 12px 18px 14px; font-size: 0px;
+			display: flex; position: relative; padding: 16px 12px 18px 14px; font-size: 0px;
 			.photo
-				display: inline-block; vertical-align: top; background-color: white; border-radius: 2px;
+				vertical-align: top; background-color: white; border-radius: 2px;
 				& > img
 					border-radius: 2px;
 			.content
-				display: inline-block; margin-left: 16px;
+				margin-left: 16px;
 				.title
 					margin: 2px 0px 8px 0px;
 					.brand
 						width:30px; height: 18px; display: inline-block; vertical-align: top; bg-image("img/brand"); background-size: 30px 18px; background-repeat: no-repeat;
 					.name
-						margin-left: 6px; font-size: 16px; font-weight: bold; line-height: 18px;
+						margin-left: 6px; font-size: 16px; font-weight: bold; line-height: 18px; width: 78%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 				.time
 					margin-bottom: 10px; font-size: 12px; line-height: 12px;
 				.supports
+					.icon
+						display: inline-block; width: 12px; height: 12px; vertical-align: top; margin-right: 4px; background-size: 12px 12px; background-repeat: no-repeat;
+					
 					.type
 						display: inline-block; width: 12px; height: 12px; vertical-align: top; margin-right: 4px; background-size: 12px 12px; background-repeat: no-repeat;
 						&.decrease
@@ -171,6 +182,8 @@
 					.supports
 						& > li
 							font-size: 12px; line-height: 16px; font-weight: 200;
+							& > img
+								display: inline-block; margin: 0px 6px 12px 12px; width: 16px; height: 16px; vertical-align: top; background-size: 16px 16px; background-repeat: no-repeat;
 							& > i
 								display: inline-block; margin: 0px 6px 12px 12px; width: 16px; height: 16px; vertical-align: top; background-size: 16px 16px; background-repeat: no-repeat;
 								&.decrease
