@@ -40,15 +40,11 @@ export default {
   },
   methods: {
     jump(index) {
-      let jump = document.getElementsByClassName('itme');
-      let total = jump[index].offsetTop;
+      const itme = document.getElementsByClassName('itme');
+      let total = itme[index].offsetTop;
+      window.pageYOffset = total;
       document.body.scrollTop = total;
       document.documentElement.scrollTop = total;
-      window.pageYOffset = total;
-
-      // $('html, body').animate({
-      // 'scrollTop': total
-      // }, 400);
     },
     loadScroll() {
       var itme = document.getElementsByClassName('itme');
@@ -63,7 +59,7 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus" rel="stylesheet/stylus" scoped>
 .orders {
   width: 100vw;
   height: 100vh;
@@ -88,7 +84,6 @@ export default {
       color: #008000;
     }
   }
-
 
   .nav {
     position: fixed;
